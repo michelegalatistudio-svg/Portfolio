@@ -258,3 +258,5 @@ a { color: inherit; }
   .home-page .site-header { position: sticky; top: 0; z-index: 100; background: #171717; }
   html { scroll-padding-top: 160px; }
 }
+/* Orizon: complete image without cropping. */
+.project-cover.project-cover-full { display: block; height: auto; max-height: none; object-fit: contain; }
