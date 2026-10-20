@@ -1,20 +1,17 @@
 # Michele Galati — Portfolio
 
-Progetto portfolio realizzato per il master usando HTML, CSS, Sass e Bootstrap CSS.
+Sito statico HTML/CSS. Aprire index.html oppure pubblicare il contenuto di questa cartella nella root del repository GitHub Pages.
 
 ## Pagine
-- `index.html` — homepage / archivio progetti
-- `cv.html` — CV in HTML
-- `contatti.html` — form di contatto
+Home, CV HTML, Contatti con form mailto, Ecodream e Orizon.
 
-## Avvio
-Apri `index.html` nel browser oppure usa Live Server in VS Code.
+## Stili
+Sorgente Sass: scss/style.scss. CSS compilato: css/style.css.
+Con Dart Sass installato: `sass scss/style.scss css/style.css --style=expanded --no-source-map`.
+Colori e spaziature sono centralizzati in :root. Stili condivisi per componenti; classi body distinte per pagina. Bootstrap rimosso secondo il feedback del docente.
 
-## Sass
-Il sorgente è in `scss/style.scss`; il CSS compilato è in `css/style.css`.
+## Immagini e condivisione
+Immagini WebP entro 1920px sul lato maggiore. Immagini Home sotto la piega lazy-loaded. Dimensioni esplicite su ogni img. Anteprime Open Graph JPEG 1200×630 in assets/social. Canonical e URL social puntano a https://michelegalatistudio-svg.github.io/Portfolio/.
 
-## Pubblicazione
-Carica la cartella in un repository GitHub e abilita GitHub Pages da Settings → Pages.
-
-## Versione 11
-Solo HTML/CSS: nessun JavaScript. Header sticky mobile applicato al figlio diretto del body. Inspo usa una tabella HTML con intestazioni e scorrimento orizzontale su mobile. Form mailto nativo: richiede un programma di posta configurato, non invia direttamente dal sito. Orizon completo con testo fornito; Ecodream in attesa dei dettagli del progetto.
+## Da completare
+Descrizione Ecodream ancora in attesa del testo del titolare. La favicon è quella esistente: il logo personale richiesto non era leggibile nel percorso fornito. Il form apre il client email, non invia dal server.
