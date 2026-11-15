@@ -59,7 +59,7 @@ html{overflow-x:clip}body{background:var(--bg)}
 .process-list{border-top:1px solid var(--line)}.step{border-bottom:1px solid var(--line)}.step-button{width:100%;display:flex;gap:22px;align-items:center;justify-content:space-between;background:transparent;color:#fff;border:0;padding:27px 0;cursor:pointer;text-align:left;font-family:'Space Grotesk';font-size:clamp(21px,2.6vw,36px);letter-spacing:-.05em}.step-button .n{font:600 11px 'DM Sans';color:var(--lime);letter-spacing:.1em;min-width:32px}.step-button .plus{font-size:24px;font-weight:400;color:var(--lime);transition:transform .3s}.step.open .plus{transform:rotate(45deg)}.step-copy{max-height:0;overflow:hidden;transition:max-height .55s var(--ease)}.step-copy p{margin:0 0 28px 55px;max-width:470px;color:#9eadbf;font-size:15px;line-height:1.8}
 .contact{min-height:72vh}.contact h2 a{transition:color .3s}.contact h2 a:hover{color:#fff}.contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.pill-link{display:inline-flex;align-items:center;gap:12px;padding:14px 21px;border-radius:100px;background:var(--lime);color:#0b1020;font-weight:700;font-size:13px;transition:transform .3s}.pill-link:hover{transform:translateY(-5px)}.pill-link.secondary{background:transparent;color:#fff;border:1px solid #4c5c6b}
 .footer{border-color:var(--line)}
-.dialog{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,8,18,.82);backdrop-filter:blur(12px)}.dialog.open{display:flex;animation:fadeIn .3s ease}@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.dialog{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,8,18,.82);backdrop-filter:blur(12px)}.dialog.open{display:flex;animation:fadeIn .3s ease;cursor:auto}.dialog.open button,.dialog.open a{cursor:pointer} body.dialog-open #cursor{display:none}@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .dialog-panel{width:min(850px,100%);max-height:min(86vh,900px);overflow:auto;background:#131d2e;border:1px solid #3c4a5c;border-radius:18px;padding:clamp(24px,5vw,56px);position:relative;box-shadow:0 30px 100px #0009}
 .dialog-close{position:absolute;top:20px;right:20px;background:#243147;border:1px solid #536176;color:#fff;border-radius:50%;height:42px;width:42px;font-size:23px;cursor:pointer}
 .dialog-label{color:var(--lime);font-size:11px;letter-spacing:.18em;text-transform:uppercase}.dialog h2{font:700 clamp(36px,6vw,72px)/1.02 'Space Grotesk';letter-spacing:-.07em;margin:24px 50px 22px 0}.dialog p{color:#c0cad6;line-height:1.8;font-size:16px;max-width:660px}.dialog-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px;border-top:1px solid var(--line);padding-top:24px}.dialog-grid h3{font-size:12px;color:var(--lime);text-transform:uppercase;letter-spacing:.14em}.dialog-grid p{font-size:14px;margin:8px 0}.dialog-note{font-size:12px!important;color:#94a4b6!important;margin-top:24px}
@@ -833,11 +833,11 @@ requestAnimationFrame(() => {
     previousFocus=document.activeElement;
     currentProject = key;
     renderDialog();
-    dialog.classList.add('open');dialog.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';close.focus({preventScroll:true});
+    dialog.classList.add('open');document.body.classList.add('dialog-open');dialog.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';close.focus({preventScroll:true});
   };
   const closeDialog=()=>{
     currentProject = null;
-    dialog.classList.remove('open');dialog.setAttribute('aria-hidden','true');document.body.style.overflow='';
+    dialog.classList.remove('open');document.body.classList.remove('dialog-open');dialog.setAttribute('aria-hidden','true');document.body.style.overflow='';
     if(previousFocus)previousFocus.focus({preventScroll:true});
   };
   close.addEventListener('click',closeDialog);
