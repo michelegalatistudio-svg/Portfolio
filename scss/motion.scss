@@ -66,3 +66,10 @@ a,button,.chip,.visual{cursor:pointer!important}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.motion-ring,.motion-core,.tickertrack,.sound-toggle .sound-bars i{animation:none!important}.motion-field{transform:none!important}.reveal{opacity:1!important;transform:none!important}*,*::before,*::after{transition:none!important;animation:none!important}}
 
 .live-nav-list{display:flex;align-items:center;gap:35px;list-style:none;margin:0;padding:0}
+
+/* Real project materials: Ecodream and Orizon. */
+.project-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.project:hover .project-photo img{transform:scale(1.035)}
+.dialog-project-image{display:block;width:100%;height:auto;border-radius:8px;margin:0 0 32px}
+.dialog-project-image[hidden]{display:none}
+.dialog-project-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
